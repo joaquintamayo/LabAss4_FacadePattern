@@ -4,18 +4,21 @@ public class FrontDesk {
     private Cart cart;
 
     public void valetService(String plateNumber) {
-        this.valet = new Valet(plateNumber);
-        valet.service();  
+        valet = new Valet();
+        valet.setPlateNumber(plateNumber);
+        valet.service();
     }
 
     public void hkService(int roomNumber) {
-        this.hk = new HouseKeeping(roomNumber);
-        hk.service(); 
+        hk = new HouseKeeping();
+        hk.setRoomNumber(roomNumber);
+        hk.service();
     }
 
     public void cartService(int numberOfCarts) {
-        this.cart = new Cart(numberOfCarts);
-        cart.service();  
+        cart = new Cart();
+        cart.setNumberOfCarts(numberOfCarts);
+        cart.service();
     }
 
     public void allServices(String plateNumber, int roomNumber, int numberOfCarts) {
